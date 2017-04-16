@@ -13,7 +13,7 @@ class Ordering extends Migration
      */
     public function up()
     {
-      Schema::create('product_order', function (Blueprint $table){
+      Schema::create('product_orders', function (Blueprint $table){
         $table->increments('id');
         $table->integer('product_id');
         $table->integer('day');
@@ -23,6 +23,7 @@ class Ordering extends Migration
         $table->integer('rice_option');
         $table->integer('barley_option');
         $table->integer('basmati_option');
+        $table->tinyInteger('payment_method');
         $table->boolean('status')->comment('pending, processed, delivered');
         $table->timestamps();
         $table->SoftDeletes();

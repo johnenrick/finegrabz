@@ -17,6 +17,7 @@ Route::get('/', function () {
 /*
   Accessing uploaded files
 */
+
 Route::get('image/{filename}', function ($filename)
 {
   $path = storage_path('app/images/' . $filename);
@@ -33,4 +34,22 @@ Route::get('image/{filename}', function ($filename)
 
   return $response;
 
+});
+Route::get('/cache', function () {
+    $exitCode = Artisan::call('config:cache');
+    return 'hey'.$exitCode;
+
+    //
+});
+Route::get('/clear', function () {
+    $exitCode = Artisan::call('config:cache');
+    return 'hey'.$exitCode;
+
+    //
+});
+Route::get('/migrate', function () {
+    $exitCode = Artisan::call('migrate');
+    return 'hey'.$exitCode;
+
+    //
 });

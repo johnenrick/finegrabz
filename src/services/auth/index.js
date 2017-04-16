@@ -26,7 +26,6 @@ export default {
     this.user.type = type * 1
   },
   setToken(token){
-
     this.tokenData.token = token
     localStorage.setItem('usertoken', token)
     if(token){

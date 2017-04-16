@@ -38,21 +38,20 @@
           </div>
         </div>
       </div>
-      <!-- Project One -->
       <template v-for="productByDay in productListByDay" >
         <h3>{{productByDay['day']}}</h3>
         <hr style="border-top: 1px solid #18bc9c;"/>
         <div v-for="product in productByDay['products']" class="row">
             <div class="col-md-7">
-                <img class="img-responsive" v-bind:src="IMAGE_URL + product['image']" alt="">
+                <img class="img-responsive img-thumbnail" v-bind:src="IMAGE_URL + product['image']" alt="">
             </div>
             <div class="col-md-5" style="">
                 <h3>{{product['description']}}</h3>
                 <p>{{product['details']}}</p>
                 <p style="font-style:italic">Available with:<br>
-                  <span v-if="product['rice'] * 1">&nbsp;&nbsp;Rice - ${{product['rice']}}<br></span>
-                  <span v-if="product['barley'] * 1" >&nbsp;&nbsp;Barley - ${{product['barley']}}<br></span>
-                  <span v-if="product['basmati_rice'] * 1" >&nbsp;&nbsp;Basmati - ${{product['basmati_rice']}}<br></span>
+                  <span v-if="product['rice'] * 1">&nbsp;&nbsp;Rice - ${{(product['rice'] * 1).toFixed(2)}}<br></span>
+                  <span v-if="product['barley'] * 1" >&nbsp;&nbsp;Barley - ${{(product['barley'] * 1).toFixed(2)}}<br></span>
+                  <span v-if="product['basmati_rice'] * 1" >&nbsp;&nbsp;Basmati - ${{(product['basmati_rice']*1).toFixed(2)}}<br></span>
                 </p>
                 <div class="form-group text-center">
                   <a @click="showModal=true; orderProductID=product['id']" class="btn btn-success" >Place Order Now <span class="glyphicon glyphicon-chevron-right"></span></a>

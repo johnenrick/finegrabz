@@ -10,7 +10,7 @@
         <div class="row text-center"  >
             <div class="col-lg-8 col-lg-offset-2">
                 <p >
-                  You will receive an sms or chat once we processed!
+                  You will receive an sms or chat once we process your order!
                 </p>
             </div>
         </div>
